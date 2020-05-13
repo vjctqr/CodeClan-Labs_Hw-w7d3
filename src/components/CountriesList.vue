@@ -1,13 +1,24 @@
-<template>
-  
+<template lang="html">
+  <div>
+      <ul>
+          <list-component v-for="(country, index) in countries" :country="country" :key="index"></list-component>
+      </ul>
+  </div>
+ 
 </template>
 
 <script>
-export default {
+import ListComponent from './ListComponent.vue'
 
+export default {
+    name: 'countries-list',
+    props: ['countries'],
+    components:{
+        "list-component": ListComponent 
+    }
 }
 </script>
 
-<style>
+<style lang="css" scoped>
 
 </style>
